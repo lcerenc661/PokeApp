@@ -41,8 +41,6 @@ const PokemonCard = ({ name, img, types, id }) => {
       <div className="flex flex-wrap gap-1 justify-start w-full my-4">
         {types.map((type) => {
           const typeName = type.type.name;
-          console.log(typesColor[typeName])
-          console.log(typesColor['water'])
           return (
             <p
               key={typeName}

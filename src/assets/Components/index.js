@@ -5,4 +5,6 @@ export { default as LandingContainer} from './LandingContainer'
 export { default as CardComponent} from './CardComponent'
 export { default as PokemonCard} from './PokemonCard'
 export { default as PokemonContainer} from './PokemonContainer'
+export { default as Filters } from './Filters'
+export { default as Paginator } from './Paginator'
 

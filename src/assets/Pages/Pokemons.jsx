@@ -1,27 +1,41 @@
-import { customFetch } from "../../utils";
-import { Footer } from "../Components";
+import { customFetch, paginateArray, fetchIndvPokemons } from "../../utils";
+import { Filters, Footer} from "../Components";
 import { PokemonContainer } from "../Components";
-import axios from "axios";
 
-export const loader = async () => {
+
+
+export const loader = async ({ request }) => {
+  const { search } = Object.fromEntries([
+    ...new URL(request.url).searchParams.entries(),
+  ]);
   try {
-    const response = await customFetch('');
-    const pokemonsUrls = response.data.results;
-    const pokemonsList = await Promise.all (pokemonsUrls.map(async (pokemon) => {
-      const response = await axios.get(pokemon.url);
-      return response.data;
-    }));
-    return pokemonsList;
-    
+    const response = await customFetch("");
+    let pokemonsUrls = response.data.results;
+    if (search) {
+      pokemonsUrls = pokemonsUrls.filter((pokemon) =>
+        pokemon.name.includes(search)
+      );
+    }
+    if (pokemonsUrls.length >= 31) {
+      const [paginatedPokemonsUrls, totalPages] = paginateArray(pokemonsUrls, 30);
+      console.log(paginatedPokemonsUrls[1])
+      const pokemonsList = await fetchIndvPokemons(paginatedPokemonsUrls[1])
+      return { pokemonsList, totalPages };
+    }
+    const pokemonsList = await fetchIndvPokemons(pokemonsUrls)
+    return { pokemonsList };
   } catch (error) {
-    const errorMessage = error?.response?.data || "There was an error Loading the pokemons"
-    console.log(errorMessage)
+    const errorMessage =
+      error?.response?.data || "There was an error Loading the pokemons";
+    console.log(errorMessage);
+    return null;
   }
 };
 
 const Pokemons = () => {
   return (
     <div>
+      <Filters />
       <PokemonContainer />
       <Footer />
     </div>
