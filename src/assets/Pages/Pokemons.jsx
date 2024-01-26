@@ -1,13 +1,12 @@
 import { customFetch, paginateArray, fetchIndvPokemons } from "../../utils";
-import { Filters, Footer} from "../Components";
+import { Filters, Footer } from "../Components";
 import { PokemonContainer } from "../Components";
 
-
-
 export const loader = async ({ request }) => {
-  const { search } = Object.fromEntries([
+  const { search, page } = Object.fromEntries([
     ...new URL(request.url).searchParams.entries(),
   ]);
+  console.log(page)
   try {
     const response = await customFetch("");
     let pokemonsUrls = response.data.results;
@@ -17,12 +16,16 @@ export const loader = async ({ request }) => {
       );
     }
     if (pokemonsUrls.length >= 31) {
-      const [paginatedPokemonsUrls, totalPages] = paginateArray(pokemonsUrls, 30);
-      console.log(paginatedPokemonsUrls[1])
-      const pokemonsList = await fetchIndvPokemons(paginatedPokemonsUrls[1])
-      return { pokemonsList, totalPages };
+      const [paginatedPokemonsUrls, totalPages] = paginateArray(
+        pokemonsUrls,
+        30
+      );
+      const pokemonsList = await fetchIndvPokemons(
+        page ? paginatedPokemonsUrls[page] : paginatedPokemonsUrls[1]
+      );
+      return { pokemonsList, totalPages, page };
     }
-    const pokemonsList = await fetchIndvPokemons(pokemonsUrls)
+    const pokemonsList = await fetchIndvPokemons(pokemonsUrls);
     return { pokemonsList };
   } catch (error) {
     const errorMessage =
