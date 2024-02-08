@@ -5,8 +5,14 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        pokemon: ['Pokemon Solid','Urbanist'],
+        'sans': ['Urbanist', 'sans-serif']
+
+      }
+    },
   },
-  plugins: [],
+  plugins: [require("daisyui")],
 }
 

@@ -2,6 +2,10 @@ import "./App.css";
 import { LandingPage, Pokemons, IndPokemon, Error } from "./assets/Pages";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
+// LOADERS
+import { loader as pokemonsLoader } from "./assets/Pages/Pokemons";
+import { loader as pokemonLoader } from "./assets/Pages/IndPokemon";
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -11,12 +15,15 @@ const router = createBrowserRouter([
   {
     path: "/pokemons",
     element: <Pokemons />,
-    errorElement: <Error />
+    errorElement: <Error />,
+    loader: pokemonsLoader,
   },
   {
     path: "/pokemon/:id",
     element: <IndPokemon />,
-    errorElement: <Error />
+    errorElement: <Error />,
+    loader: pokemonLoader,
+
   },
 ]);
 
