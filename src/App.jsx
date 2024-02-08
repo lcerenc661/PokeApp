@@ -4,6 +4,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 // LOADERS
 import { loader as pokemonsLoader } from "./assets/Pages/Pokemons";
+import { loader as pokemonLoader } from "./assets/Pages/IndPokemon";
 
 const router = createBrowserRouter([
   {
@@ -20,7 +21,9 @@ const router = createBrowserRouter([
   {
     path: "/pokemon/:id",
     element: <IndPokemon />,
-    errorElement: <Error />
+    errorElement: <Error />,
+    loader: pokemonLoader,
+
   },
 ]);
 

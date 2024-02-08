@@ -1,24 +1,27 @@
 import { Form } from "react-router-dom";
 import FormInput from "./FormInput";
 
-
 const Filters = () => {
   return (
-    <Form className="align-element bg-base-200 rounded-md sm:px-44 px-20 py-4 grid grid-col-2 sm:grid-cols-1 gap-x-4 items-center ">
+    <Form className=" bg-base-200 bg-opacity-75  py-4 flex items-center lg:px-60 px-16 md:justify-between justify-center ">
       {/* SEARCH */}
-      <div className="grid sm:grid-cols-4 gap-4  min-w-40 grid-cols-1 ">
+      <div className="flex items-end justify-start ">
+
         <FormInput
           type="search"
-          label="Search Pokemon"
+          label="Search"
           name="search"
-          size="input-sm"
-          divClass="col-span-1 sm:col-span-3"
         />
         <button
           type="submit"
-          className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded-md shadow btn-sm  self-end">
-          Search
+          className="bg-[#3c40c6] hover:bg-gray-100 text-gray-50 hover:text-[#3c40c6] font-semibold   border rounded-l-none rounded-md  btn-sm  max-w-24 ">
+          GO!
         </button>
+        </div>
+        <div className=" absolute bottom-[-100%] left-[-100%] md:flex md:bottom-0 md:left-0  md:relative" >
+            <img src="pokemon-logo.svg" alt="pokemon-logo" className="h-16 scale-125" />
+
+        
       </div>
     </Form>
   );

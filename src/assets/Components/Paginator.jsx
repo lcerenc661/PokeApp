@@ -5,12 +5,10 @@ const Paginator = () => {
   const { pathname, search } = useLocation();
   const navigate = useNavigate();
   const actualPage = parseInt(page) || 1;
-  console.log(totalPages);
 
   const handlePageChange = (pageNumber) => {
     const searchParams = new URLSearchParams(search);
     searchParams.set("page", pageNumber);
-    console.log(searchParams.toString());
     navigate(`${pathname}?${searchParams.toString()}`);
     window.scrollTo({ top: 0, behavior: 'smooth' })
   };
@@ -20,7 +18,7 @@ const Paginator = () => {
       <button
         key={pageNumber}
         onClick={()=>(handlePageChange(pageNumber))}
-        className={`join-item btn-md ${
+        className={`join-item  btn btn-md ${
           pageNumber == actualPage ? "btn-active" : ""
         }`}>
         {pageNumber}
@@ -54,7 +52,7 @@ const Paginator = () => {
       //DOTS
       if (actualPage > 3 && totalPages > 5) {
         pageButtons.push(
-          <button key="dot1" className="join-item btn-md">
+          <button key="dot1" className="join-item btn btn-md">
             ...
           </button>
         );
@@ -82,7 +80,7 @@ const Paginator = () => {
       if (page < totalPages - 1) {
         pageButtons.push(addPageButton(totalPages));
       }
-      console.log(pageButtons);
+
       
     }
     return pageButtons;

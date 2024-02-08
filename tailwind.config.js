@@ -7,7 +7,9 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        pokemon: ['Pokemon Solid']
+        pokemon: ['Pokemon Solid','Urbanist'],
+        'sans': ['Urbanist', 'sans-serif']
+
       }
     },
   },

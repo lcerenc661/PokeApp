@@ -7,4 +7,7 @@ export { default as PokemonCard} from './PokemonCard'
 export { default as PokemonContainer} from './PokemonContainer'
 export { default as Filters } from './Filters'
 export { default as Paginator } from './Paginator'
+export { default as Title } from './Title' 
+export { default as StatsChart } from "./StatsChart"
+export { default as DescriptionChart } from "./DescriptionChart"
 

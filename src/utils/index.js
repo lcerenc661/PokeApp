@@ -30,3 +30,34 @@ export const fetchIndvPokemons = async (pokemonsUrls) => {
   )
    
 }
+
+export const getSpeciesNames = (evolutionData, counter, evolutionLine)=>{
+
+  evolutionLine[counter] =  evolutionData.species
+  
+  if (evolutionData.evolves_to.length>0){
+    const nextEvolution = evolutionData.evolves_to[0];
+    return  getSpeciesNames(nextEvolution, counter + 1, evolutionLine);
+  }
+  return evolutionLine
+}
+
+
+export const getBaseStats = (statsArr) =>{
+  let stats = {}
+  for (let i = 0; i < statsArr.length; i++){
+    const statsName = statsArr[i].stat.name
+    const value = statsArr[i].base_stat
+    stats[statsName] = value
+  }
+  return stats
+}
+
+export const getAbilities = (abiArr) =>{
+  let abilities = []
+  for (let i = 0; i < abiArr.length; i++){
+    const abiName = abiArr[i].ability.name
+    abilities.push(abiName)
+  }
+  return abilities
+}
