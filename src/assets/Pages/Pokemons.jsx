@@ -28,6 +28,7 @@ export const loader = async ({ request }) => {
     const pokemonsList = await fetchIndvPokemons(pokemonsUrls);
     return { pokemonsList };
   } catch (error) {
+    console.log("error")
     const errorMessage =
       error?.response?.data || "There was an error Loading the pokemons";
     console.log(errorMessage);
@@ -41,7 +42,6 @@ const Pokemons = () => {
     <div className="bg-[#ffdd59] w-screen ">
       <Filters />
       <PokemonContainer />
-      <Footer />
     </div>
   );
 };

@@ -18,8 +18,8 @@ const LandingContainer = () => {
       </div>
 
       <div className="flex gap-8 flex-wrap it justify-center">
-        <CardComponent text="Pokemons" link="/pokemons" />
-        <CardComponent text="Games" link="/pokemons"/>
+        <CardComponent text="Pokemons" link="pokedex/pokemons" />
+        <CardComponent text="Games" link="pokedex/pokemons" />
       </div>
     </div>
   );

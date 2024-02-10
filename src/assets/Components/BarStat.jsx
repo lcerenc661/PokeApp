@@ -1,3 +1,7 @@
+import { PiSwordBold } from "react-icons/pi";
+import { FaShieldHalved } from "react-icons/fa6";
+import { GiWalkingBoot } from "react-icons/gi";
+
 const BarStat = ({ stat, name }) => {
   const fillCircles = Math.round(stat / 10);
   const fillArr = [...Array(fillCircles * 2).keys()];
@@ -6,11 +10,19 @@ const BarStat = ({ stat, name }) => {
 
   return (
     <div className="flex  flex-col  mb-1 w-80 ">
-        <div className="flex justify-between">
-        <p className="uppercase font-bold tracking-tight text-[#485460] ">{name} </p>
-        <p className="tracking-wider text-sm italic text-[#808e9b] "> {stat}/150 </p>
-        </div>
-     
+      <PiSwordBold />
+
+
+      <div className="flex justify-between">
+        <p className="uppercase font-bold tracking-tight text-[#485460] ">
+          {name}{" "}
+        </p>
+        <p className="tracking-wider text-sm italic text-[#808e9b] ">
+          {" "}
+          {stat}/150{" "}
+        </p>
+      </div>
+
       <div className="flex justify-between border-b-2 pb-2">
         {fillArr.map((circle) => {
           return (
