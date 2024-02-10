@@ -8,7 +8,6 @@ export const customFetch = axios.create({
 
 export const paginateArray = (arr, pageSize) => {
   const totalPages = Math.ceil(arr.length / pageSize)
-  console.log(totalPages)
   let paginated = {}
 
   for (let i = 0; i < totalPages; i++) {
@@ -60,4 +59,16 @@ export const getAbilities = (abiArr) =>{
     abilities.push(abiName)
   }
   return abilities
+}
+
+
+export const formatIdNumber = (id)=>{
+  if (id.length < 4){
+    let newId = "0" + id
+    return formatIdNumber(newId)
+    
+  }
+  console.log(id)
+  return id
+
 }

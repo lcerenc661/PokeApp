@@ -19,7 +19,7 @@ const Filters = () => {
         </button>
         </div>
         <div className=" absolute bottom-[-100%] left-[-100%] md:flex md:bottom-0 md:left-0  md:relative" >
-            <img src="pokemon-logo.svg" alt="pokemon-logo" className="h-16 scale-125" />
+            <img src="/pokemon-logo.svg" alt="pokemon-logo" className="h-16 scale-125" />
 
         
       </div>
