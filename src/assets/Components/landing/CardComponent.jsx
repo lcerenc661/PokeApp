@@ -12,7 +12,7 @@ const CardComponent = ({ text, link }) => {
     <div className="card w-60 bg-base-100 shadow-xl">
       <figure>
         <img
-          src="/public/psyduck.jpg"
+          src="psyduck.jpg"
           alt="psyduck"
           className=" object-contain h-56"
         />
