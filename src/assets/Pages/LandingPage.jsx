@@ -1,8 +1,10 @@
-import { LandingHeader, LandingContainer, Footer } from "../Components" 
+import { LandingHeader, LandingContainer, Footer, Navbar } from "../Components" 
+
 
 const LandingPage = () => {
   return (
     <>
+      <Navbar />
       <LandingHeader/>
       <LandingContainer/>
       <Footer/>

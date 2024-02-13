@@ -5,19 +5,20 @@ const Paginator = () => {
   const { pathname, search } = useLocation();
   const navigate = useNavigate();
   const actualPage = parseInt(page) || 1;
+  console.log(actualPage);
 
   const handlePageChange = (pageNumber) => {
     const searchParams = new URLSearchParams(search);
     searchParams.set("page", pageNumber);
     navigate(`${pathname}?${searchParams.toString()}`);
-    window.scrollTo({ top: 0, behavior: 'smooth' })
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   const addPageButton = (pageNumber) => {
     return (
       <button
         key={pageNumber}
-        onClick={()=>(handlePageChange(pageNumber))}
+        onClick={() => handlePageChange(pageNumber)}
         className={`join-item  btn btn-md ${
           pageNumber == actualPage ? "btn-active" : ""
         }`}>
@@ -30,17 +31,14 @@ const Paginator = () => {
     const pageButtons = [];
     // -----CASE 1----
     if (totalPages < 2) {
-      return null
+      return null;
     }
 
     // -----CASE 2----
 
-    if (totalPages>= 2 && totalPages <=5){
-    
-      
-      for (let i = 0; i<totalPages; i++){
-        pageButtons.push(addPageButton(1+i))
-        
+    if (totalPages >= 2 && totalPages <= 5) {
+      for (let i = 0; i < totalPages; i++) {
+        pageButtons.push(addPageButton(1 + i));
       }
     }
 
@@ -70,24 +68,19 @@ const Paginator = () => {
       //DOTS
       if (actualPage + 2 < totalPages && totalPages > 5) {
         pageButtons.push(
-          <button key="dot2" className="join-item btn-md">
+          <button key="dot2" className="join-item  btn btn-md">
             ...
           </button>
         );
       }
 
       // LAST BUTTON
-      if (page < totalPages - 1) {
+      if (actualPage < totalPages - 1) {
         pageButtons.push(addPageButton(totalPages));
       }
-
-      
     }
     return pageButtons;
-
   };
-
-
 
   return <div className="join">{renderPageButtons()}</div>;
 };

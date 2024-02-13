@@ -3,7 +3,7 @@ import CardComponent from "./CardComponent";
 const LandingContainer = () => {
   return (
     <div
-      className="grid gap-8 md:grid-cols-2 items-center p-8"
+      className="grid gap-8 lg:grid-cols-2 items-center gap-y-12 p-8"
       id="landing-container">
       <div>
         <p className="text-6xl font-thin">
@@ -18,8 +18,8 @@ const LandingContainer = () => {
       </div>
 
       <div className="flex gap-8 flex-wrap it justify-center">
-        <CardComponent text="Pokemons" link="pokedex/pokemons" />
-        <CardComponent text="Games" link="pokedex/pokemons" />
+        <CardComponent text="Pokemons" link="pokedex/pokemons#top" />
+        <CardComponent text="Games" link="pokedex/pokemons#top" />
       </div>
     </div>
   );

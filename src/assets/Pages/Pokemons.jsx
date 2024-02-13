@@ -15,10 +15,10 @@ export const loader = async ({ request }) => {
         pokemon.name.includes(search)
       );
     }
-    if (pokemonsUrls.length >= 22) {
+    if (pokemonsUrls.length >= 21) {
       const [paginatedPokemonsUrls, totalPages] = paginateArray(
         pokemonsUrls,
-        21
+        20
       );
       const pokemonsList = await fetchIndvPokemons(
         page ? paginatedPokemonsUrls[page] : paginatedPokemonsUrls[1]
@@ -39,7 +39,7 @@ export const loader = async ({ request }) => {
 const Pokemons = () => {
   return (
     // <div className="bg-gradient-to-tl from-amber-300 to-yellow-100">
-    <div className="bg-[#ffdd59] w-screen ">
+    <div className="bg-[#ffdd59] w-screen pb-10">
       <Filters />
       <PokemonContainer />
     </div>
