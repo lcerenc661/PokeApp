@@ -1,14 +1,23 @@
-export { default as ErrorElement } from './ErrorElement'
-export { default as LandingHeader } from './LandingHeader'
-export { default as Footer } from './Footer'
-export { default as LandingContainer } from './LandingContainer'
-export { default as CardComponent } from './CardComponent'
-export { default as PokemonCard } from './PokemonCard'
-export { default as PokemonContainer } from './PokemonContainer'
-export { default as Filters } from './Filters'
-export { default as Paginator } from './Paginator'
-export { default as PokemonImage } from './PokemonImage'
-export { default as StatsChart } from './StatsChart'
-export { default as DescriptionChart } from './DescriptionChart'
-export { default as PokemonTitle } from './PokemonTitle.jsx'
-export { default as Loading } from './Loading'
+// GENERAL
+export { default as Paginator } from './general/Paginator'
+export { default as Loading } from './general/Loading'
+export { default as Footer } from './general/Footer'
+export { default as ErrorElement } from './general/ErrorElement'
+export { default as Navbar } from './general/NavBar.jsx'
+
+// LANDING PAGE
+export { default as LandingContainer } from './landing/LandingContainer'
+export { default as LandingHeader } from './landing/LandingHeader'
+export { default as CardComponent } from './landing/CardComponent'
+
+// POKEMONS
+export { default as PokemonCard } from './pokemons/PokemonCard'
+export { default as PokemonContainer } from './pokemons/PokemonContainer'
+export { default as Filters } from './pokemons/Filters'
+
+// INDIVIDUAL POKEMON
+export { default as PokemonImage } from './IndividualPokemon/PokemonImage'
+export { default as StatsChart } from './IndividualPokemon/StatsChart'
+export { default as DescriptionChart } from './IndividualPokemon/DescriptionChart'
+export { default as PokemonTitle } from './IndividualPokemon/PokemonTitle.jsx'
+export { default as PokemonBtn } from './IndividualPokemon/PokemonBtn.jsx'

@@ -1,11 +1,12 @@
 import axios from "axios";
 import { getSpeciesNames, getBaseStats, getAbilities } from "../../utils";
-import { redirect, useLoaderData, useNavigate } from "react-router-dom";
+import { redirect, useLoaderData } from "react-router-dom";
 import {
   DescriptionChart,
   StatsChart,
   PokemonImage,
   PokemonTitle,
+
 } from "../Components";
 
 export const loader = async ({ params }) => {
@@ -55,20 +56,11 @@ export const loader = async ({ params }) => {
 
 const IndPokemon = () => {
   const { id } = useLoaderData();
-  const navigate = useNavigate();
+  console.log(id < 200);
+
 
   return (
-    <div className="grid lg:grid-cols-2 gap-y-10 lg:px-32">
-      <button
-        className=" self-start"
-        onClick={() => navigate(`../pokemon/${parseInt(id) + 1}`)}>
-        next
-      </button>
-      <button
-        className=" self-end"
-        onClick={() => navigate(`../pokemon/${parseInt(id) - 1}`)}>
-        prev
-      </button>
+    <div className="grid lg:grid-cols-2 lg:gap-20 gap-10 xl:px-32 lg:px-16 md:px-8 md:my-24  my-12 relative">
       <PokemonImage />
       <PokemonTitle />
       <DescriptionChart />

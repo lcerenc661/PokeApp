@@ -2,11 +2,10 @@ import { useLoaderData } from "react-router-dom";
 
 const DescriptionChart = () => {
   const { height, weight, types, abilitiesReduced } = useLoaderData();
-  console.log(height, weight, types, abilitiesReduced);
 
   return (
-    <div className="flex flex-col self-end ">
-      <h3 className="text-6xl font-bold text-end text-[#ffdd59] " >Pokedex Data</h3>
+    <div className="flex flex-col self-end px-8">
+      <h3 className="text-6xl font-bold text-end text-[#ffdd59]  pb-4 " >Pokedex Data</h3>
       <div className="border-t-2 border-[#ffdd59] flex flex-col p-4">
         <h1 className="font-bold text-xl">Pokemon Biometrics</h1>
         <div className="flex justify-between mb-2">

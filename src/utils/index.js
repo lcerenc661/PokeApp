@@ -68,7 +68,6 @@ export const formatIdNumber = (id)=>{
     return formatIdNumber(newId)
     
   }
-  console.log(id)
   return id
 
 }

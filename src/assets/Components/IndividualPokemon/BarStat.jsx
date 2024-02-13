@@ -9,33 +9,33 @@ const BarStat = ({ stat, name }) => {
   const emptyArr = [...Array(emptyCircles * 2).keys()];
 
   return (
-    <div className="flex  flex-col  mb-1 w-80 ">
-      <PiSwordBold />
-
-
-      <div className="flex justify-between">
-        <p className="uppercase font-bold tracking-tight text-[#485460] ">
-          {name}{" "}
-        </p>
-        <p className="tracking-wider text-sm italic text-[#808e9b] ">
+    <div className="flex  flex-col  mb-1 w-80 xl:w-[26rem] justify-self-center ">
+      <div className="flex justify-between ">
+        <div className="flex items-center">
+          <p className="uppercase font-bold tracking-tight text-[#485460] mr-2">
+            {name} 
+          </p>
+          <PiSwordBold />
+        </div>
+        <p className="tracking-wider text-sm  italic text-[#485460] ">
           {" "}
           {stat}/150{" "}
         </p>
       </div>
 
-      <div className="flex justify-between border-b-2 pb-2">
+      <div className="flex justify-between border-b-2 border-[#ffe78b] pb-2 mb-2">
         {fillArr.map((circle) => {
           return (
             <div
               key={circle}
-              className="w-2 h-2 bg-[#f71e16] rounded-full  "></div>
+              className="xl:w-3 xl:h-3 w-2 h-2 bg-[#665824] rounded-full  "></div>
           );
         })}
         {emptyArr.map((circle) => {
           return (
             <div
               key={circle}
-              className="w-2 h-2 bg-[#969696] rounded-full  "></div>
+              className="xl:w-3 xl:h-3 w-2 h-2 bg-[#fff5cd] rounded-full  "></div>
           );
         })}
       </div>

@@ -3,7 +3,7 @@ import FormInput from "./FormInput";
 
 const Filters = () => {
   return (
-    <Form className=" bg-base-200 bg-opacity-75  py-4 flex items-center lg:px-60 px-16 md:justify-between justify-center ">
+    <Form id="search-tab" name="search-tab" className="   py-4 flex items-center xl:px-32 lg:px-16 md:px-8 md:justify-between justify-center ">
       {/* SEARCH */}
       <div className="flex items-end justify-start ">
 
@@ -18,11 +18,11 @@ const Filters = () => {
           GO!
         </button>
         </div>
-        <div className=" absolute bottom-[-100%] left-[-100%] md:flex md:bottom-0 md:left-0  md:relative" >
+        {/* <div className=" absolute bottom-[-100%] left-[-100%] md:flex md:bottom-0 md:left-0  md:relative" >
             <img src="/pokemon-logo.svg" alt="pokemon-logo" className="h-16 scale-125" />
 
         
-      </div>
+      </div> */}
     </Form>
   );
 };
