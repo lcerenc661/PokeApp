@@ -13,7 +13,7 @@ const PokemonBtn = ( { align, text}) => {
 
   return (
     <button
-      className={` ${align} absolute bg-[#ffdd59] border-2 p-2 text-white px-4 md:rounded-xl rounded-md capitalize sm:text-base text-sm shadow-lg`}
+      className={` ${align} absolute bg-[#ffdd59] p-2 text-[#1e272e] px-4 md:rounded-xl rounded-md capitalize sm:text-base text-sm shadow-lg`}
       onClick={() => navigate(`../pokemon/${nextPage(text)}`)}>
       {text}
     </button>
