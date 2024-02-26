@@ -12,7 +12,7 @@ export const loader = async ({ request }) => {
     let pokemonsUrls = response.data.results;
     if (search) {
       pokemonsUrls = pokemonsUrls.filter((pokemon) =>
-        pokemon.name.includes(search.toLowerCase())
+        pokemon.name.includes(search)
       );
     }
     if (pokemonsUrls.length >= 21) {

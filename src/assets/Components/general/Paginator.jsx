@@ -5,7 +5,6 @@ const Paginator = () => {
   const { pathname, search } = useLocation();
   const navigate = useNavigate();
   const actualPage = parseInt(page) || 1;
-  console.log(actualPage);
 
   const handlePageChange = (pageNumber) => {
     const searchParams = new URLSearchParams(search);

@@ -20,31 +20,40 @@ export const paginateArray = (arr, pageSize) => {
   return [paginated, totalPages]
 }
 
-export const fetchIndvPokemons = async (pokemonsUrls) => {
+export const fetchIndvPokemons = async pokemonsUrls => {
   return await Promise.all(
-    pokemonsUrls.map(async (pokemon) => {
+    pokemonsUrls.map(async pokemon => {
       const response = await axios.get(pokemon.url)
       return response.data
     })
   )
-   
 }
 
-export const getSpeciesNames = (evolutionData, counter, evolutionLine)=>{
+export const fetchEvolutionLine = async pokemons => {
+  const pokemonsUrls = Object.values(pokemons).map(element => element.name)
+  return await Promise.all(
+    pokemonsUrls.map(async pokemon => {
+      const response = await axios.get(
+        `https://pokeapi.co/api/v2/pokemon/${pokemon}`
+      )
+      return response.data
+    })
+  )
+}
 
-  evolutionLine[counter] =  evolutionData.species
-  
-  if (evolutionData.evolves_to.length>0){
-    const nextEvolution = evolutionData.evolves_to[0];
-    return  getSpeciesNames(nextEvolution, counter + 1, evolutionLine);
+export const getSpeciesNames = (evolutionData, counter, evolutionLine) => {
+  evolutionLine[counter] = evolutionData.species
+
+  if (evolutionData.evolves_to.length > 0) {
+    const nextEvolution = evolutionData.evolves_to[0]
+    return getSpeciesNames(nextEvolution, counter + 1, evolutionLine)
   }
   return evolutionLine
 }
 
-
-export const getBaseStats = (statsArr) =>{
+export const getBaseStats = statsArr => {
   let stats = {}
-  for (let i = 0; i < statsArr.length; i++){
+  for (let i = 0; i < statsArr.length; i++) {
     const statsName = statsArr[i].stat.name
     const value = statsArr[i].base_stat
     stats[statsName] = value
@@ -52,22 +61,19 @@ export const getBaseStats = (statsArr) =>{
   return stats
 }
 
-export const getAbilities = (abiArr) =>{
+export const getAbilities = abiArr => {
   let abilities = []
-  for (let i = 0; i < abiArr.length; i++){
+  for (let i = 0; i < abiArr.length; i++) {
     const abiName = abiArr[i].ability.name
     abilities.push(abiName)
   }
   return abilities
 }
 
-
-export const formatIdNumber = (id)=>{
-  if (id.length < 4){
-    let newId = "0" + id
+export const formatIdNumber = id => {
+  if (id.length < 4) {
+    let newId = '0' + id
     return formatIdNumber(newId)
-    
   }
   return id
-
 }
