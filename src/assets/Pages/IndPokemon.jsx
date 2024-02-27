@@ -1,12 +1,17 @@
 import axios from "axios";
-import { getSpeciesNames, getBaseStats, getAbilities } from "../../utils";
+import {
+  getSpeciesNames,
+  getBaseStats,
+  getAbilities,
+  fetchEvolutionLine,
+} from "../../utils";
 import { redirect, useLoaderData } from "react-router-dom";
 import {
   DescriptionChart,
   StatsChart,
   PokemonImage,
   PokemonTitle,
-
+  PokemonEvolution,
 } from "../Components";
 
 export const loader = async ({ params }) => {
@@ -27,6 +32,7 @@ export const loader = async ({ params }) => {
     const evolution = responseEvolution.data.chain;
     let evolutionLine = new Object();
     evolutionLine = getSpeciesNames(evolution, 0, evolutionLine);
+    const evolutionInfo = await fetchEvolutionLine(evolutionLine);
 
     const abilitiesReduced = getAbilities(abilities);
     const statsReduced = getBaseStats(stats);
@@ -41,6 +47,7 @@ export const loader = async ({ params }) => {
       imgShowdown,
       statsReduced,
       evolutionLine,
+      evolutionInfo,
       abilitiesReduced,
       name,
       id,
@@ -55,9 +62,7 @@ export const loader = async ({ params }) => {
 };
 
 const IndPokemon = () => {
-  const { id } = useLoaderData();
-  console.log(id < 200);
-
+  const { id, evolutionLine } = useLoaderData();
 
   return (
     <div className="grid lg:grid-cols-2 lg:gap-20 gap-10 xl:px-32 lg:px-16 md:px-8 md:my-24  my-12 relative">
@@ -65,6 +70,7 @@ const IndPokemon = () => {
       <PokemonTitle />
       <DescriptionChart />
       <StatsChart />
+      {evolutionLine && <PokemonEvolution />}
     </div>
   );
 };
