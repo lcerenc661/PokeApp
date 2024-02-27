@@ -42,7 +42,7 @@ const PokemonEvolution = () => {
         <h3 className="text-6xl font-bold text-end mb-2 pb-8 text-[#485460]">
           Evolution Line
         </h3>
-        <div className=" flex flex-col lg:flex-row justify-between items-center self-center lg:p-16 px-64 py-16 bg-[#48546009]  rounded-3xl">
+        <div className=" flex flex-col lg:flex-row justify-between items-center self-center lg:p-16 px-8  py-16  bg-[#48546009]  rounded-3xl">
           {evolutionInfo.map((pokemon, index) => {
             const { name, types, id, sprites } = pokemon;
             const img = sprites.other["official-artwork"].front_default;
