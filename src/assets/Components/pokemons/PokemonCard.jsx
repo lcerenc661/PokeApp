@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
-import { getColorType } from "../../../utils";
+import { formatIdNumber, getColorType } from "../../../utils";
 
 const PokemonCard = ({ name, img, types, id, evolution = "none" }) => {
+  const newId = formatIdNumber(id.toString());
   return (
     <Link
       to={`../pokemon/${id}`}
@@ -23,7 +24,7 @@ const PokemonCard = ({ name, img, types, id, evolution = "none" }) => {
         />
       </div>
       <div className="flex flex-col w-full justify-start ">
-        <p className="text-left ml-3 font-bold text-slate-400">N-{id}</p>
+        <p className="text-left ml-3 font-bold text-slate-400">#{newId}</p>
         <p className="text-left text-2xl ml-3 font-bold capitalize text-[#485460] ">
           {name}
         </p>
