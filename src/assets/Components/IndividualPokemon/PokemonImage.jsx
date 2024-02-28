@@ -30,9 +30,12 @@ const PokemonImage = () => {
         />
       )}
       {/* <div className=" bg-[#d2dae2] absolute  w-2/6 h-4/6 bottom-0 left-0 z-10 "></div> */}
-      <div className="absolute bg-[#ffdd59] end-1/2 z-40 top-0   translate-x-2/4 rounded-b-full px-8 shadow-lg">
-        <button onClick={handleGender}>
-          {gender === "male" ? "Shiny/Regular" : "Regular/Shiny"}
+      <div className="absolute end-1/2 z-40 top-0 translate-x-2/4 px-8  flex  items-center">
+        <button onClick={handleGender} className={`${gender ==="male"? "bg-[#485460] shadow-md font-bold text-white": "border-[#4854605d] border-[1px] text-xs text-[#d2dae2]"}  px-4 py-1  rounded-bl-lg transition-all`}>
+          Regular
+        </button>
+        <button onClick={handleGender} className={`${gender !== "male"? "bg-[#485460] shadow-md font-bold text-white": "border-[#4854605d] border-[1px] text-xs text-[#d2dae2]"} px-4 py-1   rounded-br-lg transition-all`}>
+          Shiny
         </button>
       </div>
       {id > 1 && (

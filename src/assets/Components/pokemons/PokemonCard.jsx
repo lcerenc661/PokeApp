@@ -19,7 +19,7 @@ const PokemonCard = ({ name, img, types, id, evolution = "none" }) => {
         <img
           src={img}
           alt="Pokemon"
-          className={`max-w-64 min-w-48 rounded-t-2xl bg-[#d2dae2] bg-opacity-80 z-10 relative`}
+          className={`max-w-[15] min-w-48 rounded-t-2xl bg-[#d2dae2] bg-opacity-80 z-10 relative`}
         />
       </div>
       <div className="flex flex-col w-full justify-start ">
