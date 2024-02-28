@@ -1,8 +1,22 @@
 import { PiSwordBold } from "react-icons/pi";
 import { FaShieldHalved } from "react-icons/fa6";
 import { GiWalkingBoot } from "react-icons/gi";
+import { IoMdHeartEmpty } from "react-icons/io";
+import { GiArmorUpgrade } from "react-icons/gi";
+import { GiStoneSpear } from "react-icons/gi";
 
 const BarStat = ({ stat, name }) => {
+  console.log(name);
+
+  const stateType = {
+    speed: <GiWalkingBoot />,
+    hp: <PiSwordBold />,
+    attack: <IoMdHeartEmpty />,
+    defense: <FaShieldHalved />,
+    "special-defense": <GiArmorUpgrade />,
+    "special-attack": <GiStoneSpear />,
+  };
+
   const fillCircles = Math.round(stat / 10);
   const fillArr = [...Array(fillCircles * 2).keys()];
   const emptyCircles = 15 - fillCircles;
@@ -12,10 +26,13 @@ const BarStat = ({ stat, name }) => {
     <div className="flex  flex-col  mb-1 w-80 xl:w-[26rem] justify-self-center ">
       <div className="flex justify-between ">
         <div className="flex items-center">
-          <p className="uppercase font-bold tracking-tight text-[#485460] mr-2">
-            {name} 
+          <p className="mr-4" > 
+          {stateType[name]}
+
           </p>
-          <PiSwordBold />
+          <p className="uppercase font-bold tracking-tight text-[#485460]">
+            {name}
+          </p>
         </div>
         <p className="tracking-wider text-sm  italic text-[#485460] ">
           {" "}

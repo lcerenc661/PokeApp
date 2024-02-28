@@ -1,5 +1,5 @@
 import "./App.css";
-import { LandingPage, Pokemons, IndPokemon, Error, Pokedex } from "./assets/Pages";
+import { LandingPage, Pokemons, IndPokemon, Error, Pokedex, AboutUS } from "./assets/Pages";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 // LOADERS
@@ -28,6 +28,11 @@ const router = createBrowserRouter([
         loader: pokemonLoader,
       },
     ],
+  },
+  {
+    path: "/aboutUs",
+    element: <AboutUS />,
+    errorElement: <Error />,
   },
 ]);
 
