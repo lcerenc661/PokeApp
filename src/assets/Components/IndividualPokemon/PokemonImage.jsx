@@ -45,7 +45,7 @@ const PokemonImage = () => {
         />
       )}
 
-      {id < 1000 && (
+      {id < 494 && (
         <PokemonBtn
           align="right-0 top-2/4 z-40 translate-y-[-50%] sm:translate-x-[50%]"
           text="next"

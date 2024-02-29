@@ -17,7 +17,7 @@ const NavBar = () => {
 
           <img src="/pokemon-logo.svg" alt="pokemon-logo" className="h-10 " />
         </div>
-        <div className="flex  gap-16  md:gap-8 text-xl text-[#485460]">
+        <div className="flex just justify-around text-xl text-[#485460]">
           <Link className={`flex items-center`} to="/">
             <button className={`${actualPage ==="home" ? "text-[#1e272e] font-bold text-2xl border-[#ffffff1f] border-4": ""} transition-all px-3 py-1 rounded-2xl`}>Home</button>
           </Link>
