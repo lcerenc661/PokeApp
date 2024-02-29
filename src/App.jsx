@@ -1,6 +1,17 @@
 import "./App.css";
-import { LandingPage, Pokemons, IndPokemon, Error, Pokedex, AboutUS } from "./assets/Pages";
+import {
+  LandingPage,
+  Pokemons,
+  IndPokemon,
+  Error,
+  Pokedex,
+  AboutUS,
+} from "./assets/Pages";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+
+//REDUX
+import { store } from "./app/store";
+import { Provider } from "react-redux";
 
 // LOADERS
 import { loader as pokemonsLoader } from "./assets/Pages/Pokemons";
@@ -38,9 +49,11 @@ const router = createBrowserRouter([
 
 function App() {
   return (
-    <RouterProvider router={router}>
-      <h1 className="text-3xl font-bold underline">App</h1>
-    </RouterProvider>
+    <Provider store={store}>
+      <RouterProvider router={router}>
+        <h1 className="text-3xl font-bold underline">App</h1>
+      </RouterProvider>
+    </Provider>
   );
 }
 
