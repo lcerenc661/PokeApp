@@ -11,7 +11,7 @@ const PokemonImage = () => {
   const isShinny = useSelector((state) => state.shiny.showShiny);
 
   return (
-    <div className="relative flex flex-row items-center row-span-2 justify-self-center bg-[#ffde591f]  sm:rounded-[80px] transition-transform">
+    <div className="relative flex flex-row items-center row-span-2 justify-self-center bg-[#ffde591f]  sm:rounded-[80px] min-h-96 w-full sm:w-auto transition-all ">
       {!isShinny ? (
         <img
           src={imgFront}
