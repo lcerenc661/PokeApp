@@ -11,20 +11,22 @@ const PokemonImage = () => {
   const isShinny = useSelector((state) => state.shiny.showShiny);
 
   return (
-    <div className="relative flex flex-row items-center row-span-2 justify-self-center bg-[#ffde591f]  sm:rounded-[80px] min-h-96 w-full sm:w-auto transition-all ">
-      {!isShinny ? (
-        <img
-          src={imgFront}
-          alt="Pokemon Image"
-          className="z-30 object-contain scale-75"
-        />
-      ) : (
-        <img
-          src={imgShiny}
-          alt="Pokemon Image"
-          className="z-30 object-contain scale-75"
-        />
-      )}
+    <div className="relative flex flex-col items-center justify-center row-span-2 justify-self-center bg-[#ffde591f]  sm:rounded-[80px] min-h-96 w-full  sm:w-[475px] md:w-auto transition-all ">
+      <div className="flex items-center">
+        {!isShinny ? (
+          <img
+            src={imgFront}
+            alt="Pokemon Image"
+            className="z-30 object-contain scale-75 p"
+          />
+        ) : (
+          <img
+            src={imgShiny}
+            alt="Pokemon Image"
+            className="z-30 object-contain scale-75"
+          />
+        )}
+      </div>
       {/* <div className=" bg-[#d2dae2] absolute  w-2/6 h-4/6 bottom-0 left-0 z-10 "></div> */}
       <div className="absolute end-1/2 z-40 top-0 translate-x-2/4 px-8  flex  items-center">
         <button
