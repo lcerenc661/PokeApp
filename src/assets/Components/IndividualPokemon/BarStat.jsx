@@ -10,8 +10,8 @@ const BarStat = ({ stat, name }) => {
 
   const stateType = {
     speed: <GiWalkingBoot />,
-    hp: <PiSwordBold />,
-    attack: <IoMdHeartEmpty />,
+    hp: <IoMdHeartEmpty />,
+    attack: <PiSwordBold />,
     defense: <FaShieldHalved />,
     "special-defense": <GiArmorUpgrade />,
     "special-attack": <GiStoneSpear />,
