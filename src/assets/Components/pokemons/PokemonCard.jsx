@@ -11,7 +11,7 @@ const PokemonCard = ({ name, img, types, id, evolution = "none" }) => {
           ? "bg-amber-50 hover:shadow-2xl hover:-translate-y-1 hover:scale-110"
           : " bg-amber-50 border-8 border-amber-300"
       } duration-300 transition ease-in-out delay-150 cursor-pointer`}>
-      <div className="relative bg-[#d2dae2] bg-opacity-80 w-full min-h-60 rounded-t-3xl">
+      <div className="relative bg-[#d2dae2] bg-opacity-80 w-full min-h-60 rounded-t-2xl">
         <img
           src={"/pokeball.svg"}
           alt="Pokemon-ball"
