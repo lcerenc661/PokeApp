@@ -1,5 +1,4 @@
 import { useLoaderData } from "react-router-dom";
-import { useState } from "react";
 import PokemonBtn from "./PokemonBtn";
 
 // REDUX
@@ -49,14 +48,14 @@ const PokemonImage = () => {
       </div>
       {id > 1 && (
         <PokemonBtn
-          align=" left-0 top-2/4 z-40 translate-y-[-50%] sm:translate-x-[-50%]"
+          align=" left-0 top-2/4 z-40 translate-y-[-50%] translate-x-[10%] sm:translate-x-[-50%]"
           text="prev"
         />
       )}
 
       {id < 494 && (
         <PokemonBtn
-          align="right-0 top-2/4 z-40 translate-y-[-50%] sm:translate-x-[50%]"
+          align="right-0 top-2/4 z-40 translate-y-[-50%]  translate-x-[-10%] sm:translate-x-[50%]"
           text="next"
         />
       )}

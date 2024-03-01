@@ -1,7 +1,9 @@
-import { Form } from "react-router-dom";
+import { Form, useLoaderData } from "react-router-dom";
 import FormInput from "./FormInput";
 
 const Filters = () => {
+  const { search } = useLoaderData();
+
   return (
     <Form id="search-tab" name="search-tab" className="   py-4 flex items-center xl:px-32 lg:px-16 md:px-8 md:justify-between justify-center ">
       {/* SEARCH */}
@@ -11,6 +13,7 @@ const Filters = () => {
           type="search"
           label="Search"
           name="search"
+          defaultValue={search}
         />
         <button
           type="submit"

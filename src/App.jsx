@@ -13,9 +13,21 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { store } from "./app/store";
 import { Provider } from "react-redux";
 
+// REACT-QUERY
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+
 // LOADERS
 import { loader as pokemonsLoader } from "./assets/Pages/Pokemons";
 import { loader as pokemonLoader } from "./assets/Pages/IndPokemon";
+
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      staleTime: 1000 * 60 * 60 * 24,
+    },
+  },
+});
 
 const router = createBrowserRouter([
   {
@@ -31,12 +43,12 @@ const router = createBrowserRouter([
       {
         path: "pokemons",
         element: <Pokemons />,
-        loader: pokemonsLoader,
+        loader: pokemonsLoader(queryClient),
       },
       {
         path: "pokemon/:id",
         element: <IndPokemon />,
-        loader: pokemonLoader,
+        loader: pokemonLoader(queryClient),
       },
     ],
   },
@@ -50,9 +62,10 @@ const router = createBrowserRouter([
 function App() {
   return (
     <Provider store={store}>
-      <RouterProvider router={router}>
-        <h1 className="text-3xl font-bold underline">App</h1>
-      </RouterProvider>
+      <QueryClientProvider client={queryClient}>
+        <RouterProvider router={router} />
+        <ReactQueryDevtools />
+      </QueryClientProvider>
     </Provider>
   );
 }
