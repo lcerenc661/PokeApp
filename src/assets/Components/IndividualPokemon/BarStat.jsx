@@ -19,7 +19,7 @@ const BarStat = ({ stat, name }) => {
 
   const fillCircles = Math.round(stat / 10);
   const fillArr = [...Array(fillCircles * 2).keys()];
-  const emptyCircles = 15 - fillCircles;
+  const emptyCircles = 20 - fillCircles;
   const emptyArr = [...Array(emptyCircles * 2).keys()];
 
   return (
@@ -36,23 +36,23 @@ const BarStat = ({ stat, name }) => {
         </div>
         <p className="tracking-wider text-sm  italic text-[#485460] ">
           {" "}
-          {stat}/150{" "}
+          {stat}/200{" "}
         </p>
       </div>
 
-      <div className="flex justify-between border-b-2 border-[#ffe78b] pb-2 mb-2">
+      <div className="flex justify-between border-b-2 border-[#ffe78b] pb-[6px] mb-2">
         {fillArr.map((circle) => {
           return (
             <div
               key={circle}
-              className="xl:w-3 xl:h-3 w-2 h-2 bg-[#665824] rounded-full  "></div>
+              className="xl:w-3 xl:h-3 w-[5px] h-[5px] bg-[#665824] rounded-full  "></div>
           );
         })}
         {emptyArr.map((circle) => {
           return (
             <div
               key={circle}
-              className="xl:w-3 xl:h-3 w-2 h-2 bg-[#fff5cd] rounded-full  "></div>
+              className="xl:w-3 xl:h-3 w-[5px] h-[5px] bg-[#fff5cd] rounded-full  "></div>
           );
         })}
       </div>

@@ -1,4 +1,5 @@
 import axios from "axios";
+import { useEffect } from "react";
 import {
   getSpeciesNames,
   getBaseStats,
@@ -96,6 +97,10 @@ export const loader =
 
 const IndPokemon = () => {
   const { id, evolutionLine } = useLoaderData();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <div className="grid lg:grid-cols-2 lg:gap-20 gap-10 xl:px-32 lg:px-16 md:px-8 md:my-24  my-12 relative">

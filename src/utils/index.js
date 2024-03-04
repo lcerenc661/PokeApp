@@ -1,6 +1,7 @@
 import axios from 'axios'
 
-const pokeURL = 'https://pokeapi.co/api/v2/pokemon/?limit=494'
+// const pokeURL = 'https://pokeapi.co/api/v2/pokemon/?limit=494'
+const pokeURL = 'https://pokeapi.co/api/v2/pokemon/?limit=900'
 
 export const customFetch = axios.create({
   baseURL: pokeURL
@@ -30,15 +31,21 @@ export const fetchIndvPokemons = async pokemonsUrls => {
 }
 
 export const fetchEvolutionLine = async pokemons => {
-  const pokemonsUrls = Object.values(pokemons).map(element => element.name)
-  return await Promise.all(
-    pokemonsUrls.map(async pokemon => {
-      const response = await axios.get(
-        `https://pokeapi.co/api/v2/pokemon/${pokemon}`
-      )
-      return response.data
-    })
-  )
+  try {
+    const pokemonsUrls = Object.values(pokemons).map(element => element.name)
+    return await Promise.all(
+      pokemonsUrls.map(async pokemon => {
+        const response = await axios.get(
+          `https://pokeapi.co/api/v2/pokemon/${pokemon}`
+        )
+        return response.data
+      })
+    )
+    
+    
+  } catch (error) {
+    return 
+  }
 }
 
 export const getSpeciesNames = (evolutionData, counter, evolutionLine) => {

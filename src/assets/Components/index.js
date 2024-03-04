@@ -22,3 +22,6 @@ export { default as DescriptionChart } from './IndividualPokemon/DescriptionChar
 export { default as PokemonTitle } from './IndividualPokemon/PokemonTitle.jsx'
 export { default as PokemonBtn } from './IndividualPokemon/PokemonBtn.jsx'
 export { default as PokemonEvolution } from './IndividualPokemon/PokemonEvolution.jsx'
+
+// ABOUT US 
+export { default as AboutUsFeature } from './aboutUs/AboutUsFeature'
