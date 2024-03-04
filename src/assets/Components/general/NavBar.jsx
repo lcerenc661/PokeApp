@@ -6,7 +6,7 @@ const NavBar = () => {
   const location = useLocation()
   const actualPage = location.pathname.split('/')[1] || 'home'
   return (
-    <div className="bg-[#ffeeac] ">
+    <div className="bg-[#ffeeac] w-full">
       <div className="flex md:justify-between justify-center xl:px-32 lg:px-16 md:px-8">
         <div className="md:flex items-center font-bold gap-6 absolute md:relative  md:bottom-0 md:left-0 bottom-[-100%] left-[-100%]">
           <img

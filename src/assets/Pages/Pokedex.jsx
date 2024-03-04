@@ -5,7 +5,7 @@ const Pokedex = () => {
   const navigation = useNavigation();
   const isPageLoading = navigation.state === "loading";
   return (
-    <>
+    <main>
     <Navbar/>
       {isPageLoading ? (
         <Loading />
@@ -15,7 +15,7 @@ const Pokedex = () => {
         </section>
       )}
       <Footer />
-    </>
+    </main>
   );
 };
 export default Pokedex;

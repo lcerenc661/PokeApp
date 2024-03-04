@@ -23,7 +23,7 @@ const BarStat = ({ stat, name }) => {
   const emptyArr = [...Array(emptyCircles * 2).keys()];
 
   return (
-    <div className="flex  flex-col  mb-1 w-80 xl:w-[26rem] justify-self-center ">
+    <div className="flex  flex-col  mb-1 w-72 xl:w-[26rem] justify-self-center ">
       <div className="flex justify-between ">
         <div className="flex items-center">
           <p className="mr-4" > 
