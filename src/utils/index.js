@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 // const pokeURL = 'https://pokeapi.co/api/v2/pokemon/?limit=494'
-const pokeURL = 'https://pokeapi.co/api/v2/pokemon/?limit=900'
+const pokeURL = 'https://pokeapi.co/api/v2/pokemon/?limit=1002'
 
 export const customFetch = axios.create({
   baseURL: pokeURL

@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-const CardComponent = ({ text, link }) => {
+const CardComponent = ({ text, link, largeText, img="psyduck.jpg" }) => {
   const handleLinkClick = () => {
     // Navigate to the specified link
     history.push(link);
@@ -11,15 +11,18 @@ const CardComponent = ({ text, link }) => {
   return (
     <div className="card w-60 bg-base-100 shadow-xl">
       <figure>
+        <div className="max-h-44 mt-8">
         <img
-          src="psyduck.jpg"
+          src={img}
           alt="psyduck"
-          className=" object-contain h-56"
+          className=" object-cover h-32 w-32 rounded-full"
         />
+        </div>
+
       </figure>
       <div className="card-body">
         <h2 className="card-title">{text} </h2>
-        <p>If a dog chews shoes whose shoes does he c</p>
+        <p className="text-xs">{largeText}</p>
         <div className="card-actions justify-end">
           <Link
             to={link}
